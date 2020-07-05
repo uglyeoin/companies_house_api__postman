@@ -1,0 +1,709 @@
+{
+	"info": {
+		"_postman_id": "ca8a8fed-2559-47fe-bc54-8728d500982b",
+		"name": "Companies House",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Resources",
+					"item": [],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/search",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"search"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/search/search.html"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/search/companies?q=Onion Marketing Ltd&items_per_page=3&start_index=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"search",
+								"companies"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Onion Marketing Ltd",
+									"description": "Query you are searching for\n"
+								},
+								{
+									"key": "items_per_page",
+									"value": "3",
+									"description": "Number of items you want to return"
+								},
+								{
+									"key": "start_index",
+									"value": "1",
+									"description": "index of the first item to return\n"
+								}
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/search/companies/companysearch.html"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Officer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/search/officers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"search",
+								"officers"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/search/officers/officersearch.html"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Disqualified Officer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/search/disqualified-officers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"search",
+								"disqualified-officers"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/search/disqualified-officers/disqualifiedofficersearch.html"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Filing History",
+			"item": [
+				{
+					"name": "Filing History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/company/{{company_number}}/filing-history/{{transaction_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"company",
+								"{{company_number}}",
+								"filing-history",
+								"{{transaction_id}}"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/filing-history/transaction_id/getFilingHistoryItem.html"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Filing History List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/company/{{company_number}}/filing-history",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"company",
+								"{{company_number}}",
+								"filing-history"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/filing-history/getFilingHistoryList.html"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Charges",
+			"item": [
+				{
+					"name": "List of Charges",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/company/{{company_number}}/charges",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"company",
+								"{{company_number}}",
+								"charges"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/charges/getChargeList.html"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Charges",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/company/{{company_number}}}/charges/{{charge_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"company",
+								"{{company_number}}}",
+								"charges",
+								"{{charge_id}}"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/charges/charge_id/getChargeDetails.html"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Officer Disqualifications",
+			"item": [
+				{
+					"name": "Officer Natural Disqualifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/disqualified-officers/natural/{{officer_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"disqualified-officers",
+								"natural",
+								"{{officer_id}}"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/disqualified-officers/natural/officer_id/naturalDisqualification.html"
+					},
+					"response": []
+				},
+				{
+					"name": "Officer Corporate Disqualifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/disqualified-officers/corporate/{{officer_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"disqualified-officers",
+								"corporate",
+								"{{officer_id}}"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/disqualified-officers/corporate/officer_id/corporateDisqualification.html"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Persons with Significant Control",
+			"item": [
+				{
+					"name": "List of all persons with significant control (not statements)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/company/{{company_number}}/persons-with-significant-control",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"company",
+								"{{company_number}}",
+								"persons-with-significant-control"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/persons-with-significant-control/listPersonsWithSignificantControl.html"
+					},
+					"response": []
+				},
+				{
+					"name": "Get details of an individual person with significant control",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/company/{{company_number}}/persons-with-significant-control/individual/{{persons_with_significant_control_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"company",
+								"{{company_number}}",
+								"persons-with-significant-control",
+								"individual",
+								"{{persons_with_significant_control_id}}"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/persons-with-significant-control/individual/psc_id/getIndividualWithSignificantControl.html"
+					},
+					"response": []
+				},
+				{
+					"name": "Get details of a corporate entity with significant control",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/company/{{company_number}}}/persons-with-significant-control/corporate-entity/{{corporation_with_significant_control_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"company",
+								"{{company_number}}}",
+								"persons-with-significant-control",
+								"corporate-entity",
+								"{{corporation_with_significant_control_id}}"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/persons-with-significant-control/corporate-entity/psc_id/getCorporateEntityWithSignificantControl.html"
+					},
+					"response": []
+				},
+				{
+					"name": "Get details of a legal person with significant control",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/company/{{company_number}}/persons-with-significant-control/legal-person/{{psc_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"company",
+								"{{company_number}}",
+								"persons-with-significant-control",
+								"legal-person",
+								"{{psc_id}}"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/persons-with-significant-control/legal-person/psc_id/getLegalPersonWithSignificantControl.html"
+					},
+					"response": []
+				},
+				{
+					"name": "List of all persons with significant control statements",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/company/{{company_number}}/persons-with-significant-control-statements",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"company",
+								"{{company_number}}",
+								"persons-with-significant-control-statements"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/persons-with-significant-control-statements/listPersonsWithSignificantControlStatements.html"
+					},
+					"response": []
+				},
+				{
+					"name": "Get details of a person with significant control statement",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/company/{{company_number}}/persons-with-significant-control-statements/{{statement_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"company",
+								"{{company_number}}",
+								"persons-with-significant-control-statements",
+								"{{statement_id}}"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/persons-with-significant-control-statements/statement_id/getPersonsWithSignificantControlStatement.html"
+					},
+					"response": []
+				},
+				{
+					"name": "Get details of a super secure person with significant control",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/company/{{company_number}}/persons-with-significant-control/super-secure/{{super_secure_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"company",
+								"{{company_number}}",
+								"persons-with-significant-control",
+								"super-secure",
+								"{{super_secure_id}}"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/persons-with-significant-control/super-secure/super_secure_id/getSuperSecurePersonWithSignificantControl.html"
+					},
+					"response": []
+				}
+			],
+			"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/persons-with-significant-control/persons-with-significant-control.html",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Documents API",
+			"item": [
+				{
+					"name": "Get Metadata",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/document/{{document_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"document",
+								"{{document_id}}"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/document/docs/document/id/fetchDocumentMeta.html"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Document",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/document/{{document_id}}/content",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"document",
+								"{{document_id}}",
+								"content"
+							]
+						},
+						"description": "https://developer.companieshouse.gov.uk/document/docs/document/id/content/fetchDocument.html"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Company Profile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/company/{{company_number}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"company",
+						"{{company_number}}"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "/company/{company_number}\r\n\r\nhttps://developer.companieshouse.gov.uk/api/docs/company/company_number/readCompanyProfile.html\r\n\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Registered Office Address",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/company/06623345/registered-office-address",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"company",
+						"06623345",
+						"registered-office-address"
+					]
+				},
+				"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/registered-office-address/readRegisteredOfficeAddress.html"
+			},
+			"response": []
+		},
+		{
+			"name": "Company Officers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/company/{{company_number}}/officers",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"company",
+						"{{company_number}}",
+						"officers"
+					]
+				},
+				"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/officers/officerList.html"
+			},
+			"response": []
+		},
+		{
+			"name": "Insolvency",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/company/{{company_number}}/insolvency",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"company",
+						"{{company_number}}",
+						"insolvency"
+					]
+				},
+				"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/insolvency/readCompanyInsolvency.html"
+			},
+			"response": []
+		},
+		{
+			"name": "Officer Appointments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/officers/{{officer_id}}/appointments",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"officers",
+						"{{officer_id}}",
+						"appointments"
+					]
+				},
+				"description": "https://developer.companieshouse.gov.uk/api/docs/officers/officer_id/appointments/appointmentList.html"
+			},
+			"response": []
+		},
+		{
+			"name": "UK Establishment Companies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/company/{{company_number}}/uk-establishments",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"company",
+						"{{company_number}}",
+						"uk-establishments"
+					]
+				},
+				"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/uk-establishments/getCompanyUKEstablishments.html"
+			},
+			"response": []
+		},
+		{
+			"name": "Company registers information",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/company/{{company_number}}/registers",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"company",
+						"{{company_number}}",
+						"registers"
+					]
+				},
+				"description": "https://developer.companieshouse.gov.uk/api/docs/company/company_number/registers/readCompanyRegister.html"
+			},
+			"response": []
+		},
+		{
+			"name": "Company exemptions information",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/company/{{company_number}}/exemptions",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"company",
+						"{{company_number}}",
+						"exemptions"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "shTEZxMDZEwY4Bff963oHZI7M_HmZ3iaanGAJEmN:",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "c5cb3d01-b64d-4be7-a63c-fa6c8aecc0bf",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6d3a49e3-b841-4ea0-abb1-8f9b9a195e6e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "2e291bb5-85a6-4d28-99d4-168d1a6c3662",
+			"key": "base_url",
+			"value": "https://api.companieshouse.gov.uk"
+		},
+		{
+			"id": "23a176a7-5198-45a6-b139-de11052e3e04",
+			"key": "company_number",
+			"value": "06623345"
+		},
+		{
+			"id": "e30854e8-707e-4ab9-9e41-2d7e5d8a6eee",
+			"key": "transaction_id",
+			"value": "MzI2ODI0MDAyNWFkaXF6a2N4"
+		},
+		{
+			"id": "ed01d52d-689e-42c3-8cc5-f6eafa26f39d",
+			"key": "charge_id",
+			"value": ""
+		},
+		{
+			"id": "094ab2f8-c0b6-41e7-b5ff-55e714b8c053",
+			"key": "officer_id",
+			"value": "D2prUohVVbMPPui2m9lDMPWa8l4"
+		},
+		{
+			"id": "ba113852-9b65-49fc-8280-a5ff0d76f586",
+			"key": "persons_with_significant_control_id",
+			"value": "1IgujMTWxi_JzCnSpiRcwpmJK0A"
+		},
+		{
+			"id": "5604c709-3ad1-43ba-9f13-c5401af89108",
+			"key": "corporation_with_significant_control_id",
+			"value": "06623345"
+		},
+		{
+			"id": "8fd511a5-a514-4f98-b985-93e29ed9f247",
+			"key": "statement_id",
+			"value": ""
+		},
+		{
+			"id": "03e2f5ce-b35d-48d2-839a-951bbb0af624",
+			"key": "super_secure_id",
+			"value": ""
+		},
+		{
+			"id": "fbbddcc7-821e-43cf-8764-7d60f2bc9603",
+			"key": "document_id",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
